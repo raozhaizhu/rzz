@@ -1,4 +1,4 @@
-import { HashRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; // 更改为 BrowserRouter
 import { HelmetProvider } from "react-helmet-async";
 
 import "./App.css";
