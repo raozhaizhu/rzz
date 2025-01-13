@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; // 更改为 BrowserRouter
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 
 import "./App.css";
@@ -9,7 +9,7 @@ import Markdown from "./components/Markdown";
 function App() {
     return (
         <HelmetProvider>
-            <Router>
+            <Router basename="/rzz">
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/Markdown" element={<Markdown />} />
