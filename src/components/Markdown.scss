@@ -9,33 +9,7 @@
     ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    border-bottom: 3px solid #000;
-    margin-bottom: 2rem;
-}
-h2 {
-    font-size: 2rem;
-    font-weight: bold;
-    border-bottom: 1px solid #000;
-    margin-bottom: 1rem;
-}
-h3 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-}
-p {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-}
-a {
-    color: purple;
-    border-bottom: 1px solid purple;
-}
-
-pre {
+#preview {
     background-color: #fff;
 
     .token.keyword {
@@ -54,147 +28,172 @@ pre {
     .token.operator {
         color: #000;
     }
-}
 
-blockquote {
-    &:before {
-        content: " ";
-        width: 1rem;
-        height: 1rem;
-        display: inline;
-        border: 2px solid green;
+    h1 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        border-bottom: 3px solid #000;
+        margin-bottom: 2rem;
     }
-    margin-left: 1rem;
+    h2 {
+        font-size: 2rem;
+        font-weight: bold;
+        border-bottom: 1px solid #000;
+        margin-bottom: 1rem;
+    }
+    h3 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
     p {
-        margin-left: 0.5rem;
-        font-size: 1.1rem;
-        color: green;
-        display: inline;
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
     }
-}
-
-/* 给 table 设置默认样式 */
-table {
-    width: 100%; /* 让表格宽度占满容器 */
-    border-collapse: collapse; /* 合并边框，使其不重叠 */
-    margin: 20px 0; /* 添加上下边距 */
-    font-size: 1rem; /* 设置字体大小 */
-    text-align: left; /* 设置文本左对齐 */
-    color: #333; /* 设置文字颜色 */
-}
-
-/* 设置表头的样式 */
-th {
-    padding: 10px; /* 设置表头单元格的内边距 */
-    background-color: #f4f4f4; /* 设置表头背景色 */
-    border: 1px solid #ccc; /* 添加表头的边框 */
-    text-transform: uppercase; /* 设置表头文字为大写 */
-}
-
-/* 设置表格单元格的样式 */
-td {
-    padding: 10px; /* 设置表格单元格的内边距 */
-    border: 1px solid #ccc; /* 添加单元格边框 */
-}
-
-/* 设置表格行的交替背景色 */
-tr:nth-child(even) {
-    background-color: #f9f9f9; /* 设置偶数行的背景色 */
-}
-
-/* 设置表格行的鼠标悬停效果 */
-tr:hover {
-    background-color: #eaeaea; /* 鼠标悬停时改变行的背景色 */
-}
-
-/* 设置表格边框的样式 */
-table,
-th,
-td {
-    border: 1px solid #ddd; /* 统一边框颜色 */
-}
-/* 设置 ul 和 ol 的默认样式 */
-ul,
-ol {
-    padding-left: 20px; /* 设置左侧内边距 */
-    margin: 10px 0; /* 设置上下边距 */
-    list-style-position: inside; /* 项目符号在列表项内部 */
-}
-
-/* 第一层级 ul 和 ol */
-ul {
-    list-style-type: disc; /* 实心圆 */
-    li::marker {
-        color: #ff6347; /* 第一层圆点颜色：番茄红 */
+    a {
+        color: purple;
+        border-bottom: 1px solid purple;
     }
-}
-
-ol {
-    list-style-type: decimal; /* 数字 */
-    li::marker {
-        color: #4682b4; /* 第一层数字颜色：钢蓝色 */
+    blockquote {
+        &:before {
+            content: " ";
+            width: 1rem;
+            height: 1rem;
+            display: inline;
+            border: 2px solid green;
+        }
+        margin-left: 1rem;
+        p {
+            margin-left: 0.5rem;
+            font-size: 1.1rem;
+            color: green;
+            display: inline;
+        }
     }
-}
 
-/* 第二层级 ul 和 ol */
-ul ul {
-    list-style-type: circle; /* 圆圈 */
-    padding-left: 20px;
-    li::marker {
-        color: #32cd32; /* 第二层圆圈颜色：绿色 */
+    /* 给 table 设置默认样式 */
+    table {
+        width: 100%; /* 让表格宽度占满容器 */
+        border-collapse: collapse; /* 合并边框，使其不重叠 */
+        margin: 20px 0; /* 添加上下边距 */
+        font-size: 1rem; /* 设置字体大小 */
+        text-align: left; /* 设置文本左对齐 */
+        color: #333; /* 设置文字颜色 */
     }
-}
 
-ol ol {
-    list-style-type: lower-alpha; /* 小写字母 */
-    padding-left: 20px;
-    li::marker {
-        color: #8a2be2; /* 第二层小写字母颜色：蓝紫色 */
+    /* 设置表头的样式 */
+    th {
+        padding: 10px; /* 设置表头单元格的内边距 */
+        background-color: #f4f4f4; /* 设置表头背景色 */
+        border: 1px solid #ccc; /* 添加表头的边框 */
+        text-transform: uppercase; /* 设置表头文字为大写 */
     }
-}
 
-/* 第三层级 ul 和 ol */
-ul ul ul {
-    list-style-type: square; /* 方块 */
-    padding-left: 20px;
-    li::marker {
-        color: #ff1493; /* 第三层方块颜色：深粉色 */
+    /* 设置表格单元格的样式 */
+    td {
+        padding: 10px; /* 设置表格单元格的内边距 */
+        border: 1px solid #ccc; /* 添加单元格边框 */
     }
-}
 
-ol ol ol {
-    list-style-type: upper-roman; /* 大写罗马数字 */
-    padding-left: 20px;
-    li::marker {
-        color: #b8860b; /* 第三层大写罗马数字颜色：深金色 */
+    /* 设置表格行的交替背景色 */
+    tr:nth-child(even) {
+        background-color: #f9f9f9; /* 设置偶数行的背景色 */
     }
-}
 
-/* 第四层级 ul 和 ol */
-ul ul ul ul {
-    list-style-type: disc; /* 实心圆 */
-    padding-left: 20px;
-    li::marker {
-        color: #ff4500; /* 第四层实心圆颜色：橙红色 */
+    /* 设置表格行的鼠标悬停效果 */
+    tr:hover {
+        background-color: #eaeaea; /* 鼠标悬停时改变行的背景色 */
     }
-}
 
-ol ol ol ol {
-    list-style-type: decimal-leading-zero; /* 带前导零的数字 */
-    padding-left: 20px;
-    li::marker {
-        color: #d2691e; /* 第四层数字颜色：巧克力色 */
+    /* 设置表格边框的样式 */
+    table,
+    th,
+    td {
+        border: 1px solid #ddd; /* 统一边框颜色 */
     }
-}
+    /* 设置 ul 和 ol 的默认样式 */
+    ul,
+    ol {
+        padding-left: 20px; /* 设置左侧内边距 */
+        margin: 10px 0; /* 设置上下边距 */
+        list-style-position: inside; /* 项目符号在列表项内部 */
+    }
 
-/* 设置列表项的内边距和行高 */
-li {
-    margin-bottom: 5px; /* 设置列表项之间的底部间距 */
-    line-height: 1.5; /* 设置行高 */
-}
+    /* 第一层级 ul 和 ol */
+    ul {
+        list-style-type: disc; /* 实心圆 */
+        li::marker {
+            color: #ff6347; /* 第一层圆点颜色：番茄红 */
+        }
+    }
 
-/* 给 ul 和 ol 添加 hover 效果 */
-ul:hover,
-ol:hover {
-    background-color: #f9f9f9; /* 鼠标悬停时，改变背景色 */
+    ol {
+        list-style-type: decimal; /* 数字 */
+        li::marker {
+            color: #4682b4; /* 第一层数字颜色：钢蓝色 */
+        }
+    }
+
+    /* 第二层级 ul 和 ol */
+    ul ul {
+        list-style-type: circle; /* 圆圈 */
+        padding-left: 20px;
+        li::marker {
+            color: #32cd32; /* 第二层圆圈颜色：绿色 */
+        }
+    }
+
+    ol ol {
+        list-style-type: lower-alpha; /* 小写字母 */
+        padding-left: 20px;
+        li::marker {
+            color: #8a2be2; /* 第二层小写字母颜色：蓝紫色 */
+        }
+    }
+
+    /* 第三层级 ul 和 ol */
+    ul ul ul {
+        list-style-type: square; /* 方块 */
+        padding-left: 20px;
+        li::marker {
+            color: #ff1493; /* 第三层方块颜色：深粉色 */
+        }
+    }
+
+    ol ol ol {
+        list-style-type: upper-roman; /* 大写罗马数字 */
+        padding-left: 20px;
+        li::marker {
+            color: #b8860b; /* 第三层大写罗马数字颜色：深金色 */
+        }
+    }
+
+    /* 第四层级 ul 和 ol */
+    ul ul ul ul {
+        list-style-type: disc; /* 实心圆 */
+        padding-left: 20px;
+        li::marker {
+            color: #ff4500; /* 第四层实心圆颜色：橙红色 */
+        }
+    }
+
+    ol ol ol ol {
+        list-style-type: decimal-leading-zero; /* 带前导零的数字 */
+        padding-left: 20px;
+        li::marker {
+            color: #d2691e; /* 第四层数字颜色：巧克力色 */
+        }
+    }
+
+    /* 设置列表项的内边距和行高 */
+    li {
+        margin-bottom: 5px; /* 设置列表项之间的底部间距 */
+        line-height: 1.5; /* 设置行高 */
+    }
+
+    /* 给 ul 和 ol 添加 hover 效果 */
+    ul:hover,
+    ol:hover {
+        background-color: #f9f9f9; /* 鼠标悬停时，改变背景色 */
+    }
 }

@@ -4,72 +4,77 @@
   background: linear-gradient(to right, #2c5364, #203a43, #0f2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-h1 {
+#preview {
+  background-color: #fff;
+  /* 给 table 设置默认样式 */
+  /* 设置表头的样式 */
+  /* 设置表格单元格的样式 */
+  /* 设置表格行的交替背景色 */
+  /* 设置表格行的鼠标悬停效果 */
+  /* 设置表格边框的样式 */
+  /* 设置 ul 和 ol 的默认样式 */
+  /* 第一层级 ul 和 ol */
+  /* 第二层级 ul 和 ol */
+  /* 第三层级 ul 和 ol */
+  /* 第四层级 ul 和 ol */
+  /* 设置列表项的内边距和行高 */
+  /* 给 ul 和 ol 添加 hover 效果 */
+}
+#preview .token.keyword {
+  color: #0077aa;
+}
+#preview .token.string {
+  color: #d14;
+}
+#preview .token.comment {
+  color: #999;
+  font-style: italic;
+}
+#preview .token.operator {
+  color: #000;
+}
+#preview h1 {
   font-size: 2.5rem;
   font-weight: bold;
   border-bottom: 3px solid #000;
   margin-bottom: 2rem;
 }
-
-h2 {
+#preview h2 {
   font-size: 2rem;
   font-weight: bold;
   border-bottom: 1px solid #000;
   margin-bottom: 1rem;
 }
-
-h3 {
+#preview h3 {
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
 }
-
-p {
+#preview p {
   font-size: 1rem;
   margin-bottom: 0.5rem;
 }
-
-a {
+#preview a {
   color: purple;
   border-bottom: 1px solid purple;
 }
-
-pre {
-  background-color: #fff;
-}
-pre .token.keyword {
-  color: #0077aa;
-}
-pre .token.string {
-  color: #d14;
-}
-pre .token.comment {
-  color: #999;
-  font-style: italic;
-}
-pre .token.operator {
-  color: #000;
-}
-
-blockquote {
+#preview blockquote {
   margin-left: 1rem;
 }
-blockquote:before {
+#preview blockquote:before {
   content: " ";
   width: 1rem;
   height: 1rem;
   display: inline;
   border: 2px solid green;
 }
-blockquote p {
+#preview blockquote p {
   margin-left: 0.5rem;
   font-size: 1.1rem;
   color: green;
   display: inline;
 }
-
-/* 给 table 设置默认样式 */
-table {
+#preview table {
   width: 100%; /* 让表格宽度占满容器 */
   border-collapse: collapse; /* 合并边框，使其不重叠 */
   margin: 20px 0; /* 添加上下边距 */
@@ -77,120 +82,92 @@ table {
   text-align: left; /* 设置文本左对齐 */
   color: #333; /* 设置文字颜色 */
 }
-
-/* 设置表头的样式 */
-th {
+#preview th {
   padding: 10px; /* 设置表头单元格的内边距 */
   background-color: #f4f4f4; /* 设置表头背景色 */
   border: 1px solid #ccc; /* 添加表头的边框 */
   text-transform: uppercase; /* 设置表头文字为大写 */
 }
-
-/* 设置表格单元格的样式 */
-td {
+#preview td {
   padding: 10px; /* 设置表格单元格的内边距 */
   border: 1px solid #ccc; /* 添加单元格边框 */
 }
-
-/* 设置表格行的交替背景色 */
-tr:nth-child(even) {
+#preview tr:nth-child(even) {
   background-color: #f9f9f9; /* 设置偶数行的背景色 */
 }
-
-/* 设置表格行的鼠标悬停效果 */
-tr:hover {
+#preview tr:hover {
   background-color: #eaeaea; /* 鼠标悬停时改变行的背景色 */
 }
-
-/* 设置表格边框的样式 */
-table,
-th,
-td {
+#preview table,
+#preview th,
+#preview td {
   border: 1px solid #ddd; /* 统一边框颜色 */
 }
-
-/* 设置 ul 和 ol 的默认样式 */
-ul,
-ol {
+#preview ul,
+#preview ol {
   padding-left: 20px; /* 设置左侧内边距 */
   margin: 10px 0; /* 设置上下边距 */
   list-style-position: inside; /* 项目符号在列表项内部 */
 }
-
-/* 第一层级 ul 和 ol */
-ul {
+#preview ul {
   list-style-type: disc; /* 实心圆 */
 }
-ul li::marker {
+#preview ul li::marker {
   color: #ff6347; /* 第一层圆点颜色：番茄红 */
 }
-
-ol {
+#preview ol {
   list-style-type: decimal; /* 数字 */
 }
-ol li::marker {
+#preview ol li::marker {
   color: #4682b4; /* 第一层数字颜色：钢蓝色 */
 }
-
-/* 第二层级 ul 和 ol */
-ul ul {
+#preview ul ul {
   list-style-type: circle; /* 圆圈 */
   padding-left: 20px;
 }
-ul ul li::marker {
+#preview ul ul li::marker {
   color: #32cd32; /* 第二层圆圈颜色：绿色 */
 }
-
-ol ol {
+#preview ol ol {
   list-style-type: lower-alpha; /* 小写字母 */
   padding-left: 20px;
 }
-ol ol li::marker {
+#preview ol ol li::marker {
   color: #8a2be2; /* 第二层小写字母颜色：蓝紫色 */
 }
-
-/* 第三层级 ul 和 ol */
-ul ul ul {
+#preview ul ul ul {
   list-style-type: square; /* 方块 */
   padding-left: 20px;
 }
-ul ul ul li::marker {
+#preview ul ul ul li::marker {
   color: #ff1493; /* 第三层方块颜色：深粉色 */
 }
-
-ol ol ol {
+#preview ol ol ol {
   list-style-type: upper-roman; /* 大写罗马数字 */
   padding-left: 20px;
 }
-ol ol ol li::marker {
+#preview ol ol ol li::marker {
   color: #b8860b; /* 第三层大写罗马数字颜色：深金色 */
 }
-
-/* 第四层级 ul 和 ol */
-ul ul ul ul {
+#preview ul ul ul ul {
   list-style-type: disc; /* 实心圆 */
   padding-left: 20px;
 }
-ul ul ul ul li::marker {
+#preview ul ul ul ul li::marker {
   color: #ff4500; /* 第四层实心圆颜色：橙红色 */
 }
-
-ol ol ol ol {
+#preview ol ol ol ol {
   list-style-type: decimal-leading-zero; /* 带前导零的数字 */
   padding-left: 20px;
 }
-ol ol ol ol li::marker {
+#preview ol ol ol ol li::marker {
   color: #d2691e; /* 第四层数字颜色：巧克力色 */
 }
-
-/* 设置列表项的内边距和行高 */
-li {
+#preview li {
   margin-bottom: 5px; /* 设置列表项之间的底部间距 */
   line-height: 1.5; /* 设置行高 */
 }
-
-/* 给 ul 和 ol 添加 hover 效果 */
-ul:hover,
-ol:hover {
+#preview ul:hover,
+#preview ol:hover {
   background-color: #f9f9f9; /* 鼠标悬停时，改变背景色 */
 }/*# sourceMappingURL=Markdown.css.map */
