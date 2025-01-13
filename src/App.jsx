@@ -1,15 +1,17 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Quote from "./components/Quote";
+import Markdown from "./components/Markdown";
 
 function App() {
     return (
-        <Router basename="/rzz">
-            <div className="app flex justify-center items-center min-h-screen min-w-screen">
+        <Router>
+            <>
                 <Routes>
-                    <Route path="/" element={<Quote />} />
+                    <Route path="/" element={<Markdown />} />
+                    <Route path="/Quote" element={<Quote />} />
                 </Routes>
-            </div>
+            </>
         </Router>
     );
 }

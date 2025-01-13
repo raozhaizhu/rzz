@@ -2,6 +2,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import 'prismjs/themes/prism.css';
+
 
 *,
 *::before,
@@ -107,7 +109,7 @@ select {
 /* 完全去除 textarea 默认样式 */
 textarea {
     all: unset; /* 取消所有默认样式 */
-    padding: 0.5rem; /* 内边距 */
+    padding: 0rem; /* 内边距 */
     width: 100%; /* 让 textarea 宽度占满父容器 */
     font-family: inherit; /* 继承父元素字体 */
     font-size: inherit; /* 继承父元素字体大小 */
