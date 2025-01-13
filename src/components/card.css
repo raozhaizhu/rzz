@@ -29,11 +29,12 @@
 
 /* Portfolio Grid 布局 */
 .portfolio-grid {
+    width: 80%;
+    margin: 0 auto;
+    padding: 2rem 0;
     display: grid;
-    grid-template-columns: 35% 35%;
-    gap: 4rem;
-    padding: 3rem;
-    justify-content: space-around;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
 }
 
 /* 卡片样式 */

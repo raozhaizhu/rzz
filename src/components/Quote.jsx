@@ -1,11 +1,16 @@
 import { React, useState } from "react";
+import { Helmet } from "react-helmet-async"; // 引入 Helmet
 import quotes from "../data/quotes.json";
 import colors from "../data/colors.json";
 
 const Quote = () => {
     // 设置随机索引的状态
-    const [quoteIndex, setQuoteIndex] = useState(Math.floor(Math.random() * quotes.length));
-    const [colorIndex, setColorIndex] = useState(Math.floor(Math.random() * colors.length));
+    const [quoteIndex, setQuoteIndex] = useState(
+        Math.floor(Math.random() * quotes.length)
+    );
+    const [colorIndex, setColorIndex] = useState(
+        Math.floor(Math.random() * colors.length)
+    );
 
     // 获取当前的 quote 和 color
     const randomQuote = quotes[quoteIndex];
@@ -17,29 +22,46 @@ const Quote = () => {
         setQuoteIndex(Math.floor(Math.random() * quotes.length));
         setColorIndex(Math.floor(Math.random() * colors.length));
     };
+
+    // 生成分享链接
     const tweetQuote = () => {
-        const text = encodeURIComponent(`"${randomQuote.text}" - ${randomQuote.author}`);
-        const twitterUrl = `https://twitter.com/intent/tweet?text=${text}`;
-        return twitterUrl;
+        const text = encodeURIComponent(
+            `"${randomQuote.text}" - ${randomQuote.author}`
+        );
+        return `https://twitter.com/intent/tweet?text=${text}`;
     };
-    const instagramQuote = () => {
-        const text = encodeURIComponent(`"${randomQuote.text}" - ${randomQuote.author}`);
-        const instagramUrl = `https://www.instagram.com/explore/tags/${text}`;
-        return instagramUrl;
-    };
+
+    // 截图链接
+    const screenshotUrl = `https://i.imgur.com/mCeKyZl.jpeg`;
 
     return (
         <div
             className="quoteWrapper w-full flex flex-col gap-[1rem] justify-center items-center min-h-screen"
             style={{ backgroundColor: primaryColor, color: primaryColor }}>
+            {/* 动态设置 Twitter Card Meta 信息 */}
+            <Helmet>
+                <title>{randomQuote.text}</title>
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content={randomQuote.text} />
+                <meta
+                    name="twitter:description"
+                    content={`"${randomQuote.text}" - ${randomQuote.author}`}
+                />
+                <meta name="twitter:image" content={screenshotUrl} />
+            </Helmet>
+
             <div id="quote-box" className="w-[60%] bg-[#fff] p-[3rem] rounded">
                 <article>
-                    <h2 id="text" className="font-[Lato] font-[500] text-[2rem] text-center mb-[2rem]">
-                        <i className=" fa fa-quote-left text-[3rem] mr-[1rem]"></i>
+                    <h2
+                        id="text"
+                        className="font-[Lato] font-[500] text-[2rem] text-center mb-[2rem]">
+                        <i className="fa fa-quote-left text-[3rem] mr-[1rem]"></i>
                         {randomQuote.text}
                     </h2>
-                    <h3 id="author" className="font-[Roboto] text-end text-[1.2rem] mb-[2rem]">
-                        -{randomQuote.author}
+                    <h3
+                        id="author"
+                        className="font-[Roboto] text-end text-[1.2rem] mb-[2rem]">
+                        - {randomQuote.author}
                     </h3>
                 </article>
 
@@ -53,15 +75,6 @@ const Quote = () => {
                             href={tweetQuote()}
                             target="_blank">
                             <i className="fab fa-twitter text-[1.5rem]"></i>
-                        </a>
-                        <a
-                            id="tweet-instagram"
-                            className="p-[1rem] text-[#fff] flex justify-center items-center rounded"
-                            style={{ backgroundColor: primaryColor }}
-                            role="button"
-                            href={instagramQuote()}
-                            target="_blank">
-                            <i className="fab fa-instagram text-[1.5rem]"></i>
                         </a>
                     </div>
                     <button
