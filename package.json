@@ -3,7 +3,7 @@
     "private": true,
     "version": "0.0.0",
     "type": "module",
-    "homepage": "https://raozhaizhu.github.io/rzz",
+    "homepage": "https://raozhaizhu.github.io/rzz/",
     "scripts": {
         "dev": "vite",
         "build": "vite build",
