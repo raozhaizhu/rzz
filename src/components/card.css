@@ -30,9 +30,10 @@
 /* Portfolio Grid 布局 */
 .portfolio-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 35% 35%;
     gap: 4rem;
-    padding: 2.5rem;
+    padding: 3rem;
+    justify-content: space-around;
 }
 
 /* 卡片样式 */
