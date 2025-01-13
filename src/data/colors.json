@@ -1,0 +1,52 @@
+[
+    {
+        "name": "Midnight Blue",
+        "primary": "#1A1A40",
+        "secondary": "#E0E0E0"
+    },
+    {
+        "name": "Dark Forest",
+        "primary": "#0B3D2E",
+        "secondary": "#A8D5BA"
+    },
+    {
+        "name": "Charcoal Black",
+        "primary": "#2E2E2E",
+        "secondary": "#FFFFFF"
+    },
+    {
+        "name": "Deep Wine",
+        "primary": "#3E1F47",
+        "secondary": "#F8E1F4"
+    },
+    {
+        "name": "Steel Gray",
+        "primary": "#2C3E50",
+        "secondary": "#BDC3C7"
+    },
+    {
+        "name": "Emerald Night",
+        "primary": "#014D40",
+        "secondary": "#C8E6C9"
+    },
+    {
+        "name": "Royal Purple",
+        "primary": "#1A002B",
+        "secondary": "#D1C4E9"
+    },
+    {
+        "name": "Nightfall",
+        "primary": "#1F2833",
+        "secondary": "#66FCF1"
+    },
+    {
+        "name": "Obsidian",
+        "primary": "#0F0F0F",
+        "secondary": "#F2F2F2"
+    },
+    {
+        "name": "Deep Teal",
+        "primary": "#003B46",
+        "secondary": "#D1EEFC"
+    }
+]
