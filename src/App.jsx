@@ -9,6 +9,7 @@ import Markdown from "./components/Markdown";
 function App() {
     // 动态设置 basename
     const basename = process.env.NODE_ENV === "production" ? "/rzz" : "";
+
     return (
         <HelmetProvider>
             <Router basename={basename}>
