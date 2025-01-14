@@ -12,189 +12,233 @@
 #preview {
     background-color: #fff;
 
-    .token.keyword {
-        color: #0077aa;
-    }
-
-    .token.string {
-        color: #d14;
-    }
-
-    .token.comment {
-        color: #999;
-        font-style: italic;
-    }
-
-    .token.operator {
-        color: #000;
+    /* =============== 标题样式 =============== */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-weight: bold;
+        margin-bottom: 10px;
     }
 
     h1 {
-        font-size: 2.5rem;
-        font-weight: bold;
-        border-bottom: 3px solid #000;
-        margin-bottom: 2rem;
+        font-size: 2em;
+        border-bottom: 2px solid #ccc;
+        padding-bottom: 0.3em;
     }
+
     h2 {
-        font-size: 2rem;
-        font-weight: bold;
-        border-bottom: 1px solid #000;
-        margin-bottom: 1rem;
+        font-size: 1.75em;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 0.2em;
     }
+
     h3 {
-        font-size: 1.5rem;
+        font-size: 1.5em;
+    }
+
+    h4 {
+        font-size: 1.25em;
+    }
+
+    h5 {
+        font-size: 1em;
+    }
+
+    h6 {
+        font-size: 0.875em;
+        color: #666;
+    }
+
+    /* =============== 文本样式 =============== */
+    strong,
+    b {
         font-weight: bold;
-        margin-bottom: 1rem;
-    }
-    p {
-        font-size: 1rem;
-        margin-bottom: 0.5rem;
-    }
-    a {
-        color: purple;
-        border-bottom: 1px solid purple;
-    }
-    blockquote {
-        &:before {
-            content: " ";
-            width: 1rem;
-            height: 1rem;
-            display: inline;
-            border: 2px solid green;
-        }
-        margin-left: 1rem;
-        p {
-            margin-left: 0.5rem;
-            font-size: 1.1rem;
-            color: green;
-            display: inline;
-        }
     }
 
-    /* 给 table 设置默认样式 */
-    table {
-        width: 100%; /* 让表格宽度占满容器 */
-        border-collapse: collapse; /* 合并边框，使其不重叠 */
-        margin: 20px 0; /* 添加上下边距 */
-        font-size: 1rem; /* 设置字体大小 */
-        text-align: left; /* 设置文本左对齐 */
-        color: #333; /* 设置文字颜色 */
+    em,
+    i {
+        font-style: italic;
     }
 
-    /* 设置表头的样式 */
-    th {
-        padding: 10px; /* 设置表头单元格的内边距 */
-        background-color: #f4f4f4; /* 设置表头背景色 */
-        border: 1px solid #ccc; /* 添加表头的边框 */
-        text-transform: uppercase; /* 设置表头文字为大写 */
+    del {
+        text-decoration: line-through;
     }
 
-    /* 设置表格单元格的样式 */
-    td {
-        padding: 10px; /* 设置表格单元格的内边距 */
-        border: 1px solid #ccc; /* 添加单元格边框 */
-    }
-
-    /* 设置表格行的交替背景色 */
-    tr:nth-child(even) {
-        background-color: #f9f9f9; /* 设置偶数行的背景色 */
-    }
-
-    /* 设置表格行的鼠标悬停效果 */
-    tr:hover {
-        background-color: #eaeaea; /* 鼠标悬停时改变行的背景色 */
-    }
-
-    /* 设置表格边框的样式 */
-    table,
-    th,
-    td {
-        border: 1px solid #ddd; /* 统一边框颜色 */
-    }
-    /* 设置 ul 和 ol 的默认样式 */
+    /* =============== 列表样式 =============== */
     ul,
     ol {
-        padding-left: 20px; /* 设置左侧内边距 */
-        margin: 10px 0; /* 设置上下边距 */
-        list-style-position: inside; /* 项目符号在列表项内部 */
+        padding-left: 20px;
+        margin-bottom: 20px;
     }
 
-    /* 第一层级 ul 和 ol */
-    ul {
-        list-style-type: disc; /* 实心圆 */
-        li::marker {
-            color: #ff6347; /* 第一层圆点颜色：番茄红 */
-        }
-    }
-
+    /* 有序列表样式 */
     ol {
-        list-style-type: decimal; /* 数字 */
-        li::marker {
-            color: #4682b4; /* 第一层数字颜色：钢蓝色 */
+        list-style-type: decimal;  // 保持默认数字样式
+        
+        /* 嵌套有序列表样式 */
+        ol {
+            list-style-type: lower-alpha;  // 二级使用小写字母
+            
+            ol {
+                list-style-type: lower-roman;  // 三级使用小写罗马数字
+            }
         }
     }
 
-    /* 第二层级 ul 和 ol */
-    ul ul {
-        list-style-type: circle; /* 圆圈 */
-        padding-left: 20px;
-        li::marker {
-            color: #32cd32; /* 第二层圆圈颜色：绿色 */
+    /* 无序列表样式 */
+    ul {
+        list-style: none;  // 移除默认圆点
+        
+        li {
+            position: relative;
+            padding-left: 1.2em;  // 为标记留出空间
+            
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0.75em;  // 垂直居中对齐
+                transform: translateY(-50%);
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                background-color: #007bff;
+            }
+        }
+
+        /* 不同层级的无序列表色块 */
+        ul {
+            li::before {
+                background-color: #6bbcff;
+            }
+
+            ul li::before {
+                background-color: #91caff;
+            }
+
+            ul ul li::before {
+                background-color: #b8daff;
+            }
         }
     }
 
-    ol ol {
-        list-style-type: lower-alpha; /* 小写字母 */
-        padding-left: 20px;
-        li::marker {
-            color: #8a2be2; /* 第二层小写字母颜色：蓝紫色 */
-        }
-    }
-
-    /* 第三层级 ul 和 ol */
-    ul ul ul {
-        list-style-type: square; /* 方块 */
-        padding-left: 20px;
-        li::marker {
-            color: #ff1493; /* 第三层方块颜色：深粉色 */
-        }
-    }
-
-    ol ol ol {
-        list-style-type: upper-roman; /* 大写罗马数字 */
-        padding-left: 20px;
-        li::marker {
-            color: #b8860b; /* 第三层大写罗马数字颜色：深金色 */
-        }
-    }
-
-    /* 第四层级 ul 和 ol */
-    ul ul ul ul {
-        list-style-type: disc; /* 实心圆 */
-        padding-left: 20px;
-        li::marker {
-            color: #ff4500; /* 第四层实心圆颜色：橙红色 */
-        }
-    }
-
-    ol ol ol ol {
-        list-style-type: decimal-leading-zero; /* 带前导零的数字 */
-        padding-left: 20px;
-        li::marker {
-            color: #d2691e; /* 第四层数字颜色：巧克力色 */
-        }
-    }
-
-    /* 设置列表项的内边距和行高 */
+    /* 列表项通用样式 */
     li {
-        margin-bottom: 5px; /* 设置列表项之间的底部间距 */
-        line-height: 1.5; /* 设置行高 */
+        margin-bottom: 8px;
+        line-height: 1.5;  // 确保行高一致
+        
+        &:hover {
+            background-color: #f0f8ff;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+        }
     }
 
-    /* 给 ul 和 ol 添加 hover 效果 */
-    ul:hover,
-    ol:hover {
-        background-color: #f9f9f9; /* 鼠标悬停时，改变背景色 */
+    /* 列表嵌套缩进 */
+    ul ul,
+    ol ol {
+        padding-left: 24px;
+        margin-top: 4px;
+        margin-bottom: 4px;
+    }
+
+    /* =============== 链接样式 =============== */
+    a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+        color: #0056b3;
+    }
+
+    /* =============== 图片样式 =============== */
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 10px 0;
+        border-radius: 4px;
+    }
+
+    /* =============== 代码块样式 =============== */
+    code {
+        background-color: #f8f9fa;
+        padding: 2px 4px;
+        border-radius: 4px;
+    }
+
+    pre {
+        background-color: #f8f9fa;
+        padding: 15px;
+        border-radius: 5px;
+        overflow-x: auto;
+        font-family: "Courier New", monospace;
+    }
+
+    pre:hover {
+        background-color: #e9ecef;
+    }
+
+    /* =============== 引用样式 =============== */
+    blockquote {
+        border-left: 4px solid #ddd;
+        padding-left: 15px;
+        color: #666;
+        margin: 20px 0;
+        font-style: italic;
+    }
+
+    blockquote:hover {
+        background-color: #f8f8f8;
+    }
+
+    /* =============== 表格样式 =============== */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+    }
+
+    table th,
+    table td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: left;
+    }
+
+    table th {
+        background-color: #f8f8f8;
+        font-weight: bold;
+    }
+
+    /* =============== 表格悬停效果 =============== */
+    table tr:hover {
+        background-color: #f1f1f1;
+    }
+
+    /* =============== 任务列表样式 =============== */
+    .task-list-item {
+        list-style-type: none;
+    }
+
+    .task-list-item input {
+        margin-right: 10px;
+    }
+
+    /* =============== 悬停效果和过渡动画 =============== */
+    body,
+    a,
+    li,
+    blockquote,
+    pre,
+    table th,
+    table td {
+        transition: background-color 0.3s ease, color 0.3s ease;
     }
 }
 
