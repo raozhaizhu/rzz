@@ -16,7 +16,7 @@ export default defineConfig(({ mode }) => ({
                 const htmlFile = bundle["index.html"];
                 if (htmlFile) {
                     let html = htmlFile.source;
-                    // 添加基础 meta 标签
+                    // 保持现有的 meta 标签注入
                     html = html.replace(
                         "</head>",
                         `    <!-- Twitter Card Meta Tags -->
