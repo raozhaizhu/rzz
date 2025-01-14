@@ -20,15 +20,13 @@
 
         <title>Random Quote Generator</title>
         <script>
-            // 直接重定向到 Quote 页面
-            setTimeout(() => {
-                window.location.replace("https://raozhaizhu.github.io/rzz/Quote");
-            }, 100);
+            // 直接重定向，不使用 replace
+            window.location.href = "/rzz/Quote";
         </script>
     </head>
     <body>
         <noscript>
-            <meta http-equiv="refresh" content="0;url=https://raozhaizhu.github.io/rzz/Quote" />
+            <meta http-equiv="refresh" content="0;url=/rzz/Quote" />
         </noscript>
     </body>
 </html>
