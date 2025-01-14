@@ -2,8 +2,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import 'prismjs/themes/prism.css';
 
+/* 其他 CSS 导入放在 Tailwind 指令后面 */
+@import "prismjs/themes/prism.css";
 
 *,
 *::before,
