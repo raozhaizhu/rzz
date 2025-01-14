@@ -16,10 +16,18 @@ export default defineConfig(({ mode }) => ({
                 const htmlFile = bundle["index.html"];
                 if (htmlFile) {
                     let html = htmlFile.source;
-                    // 为 Quote 页面添加 meta 标签
+                    // 添加基础 meta 标签
                     html = html.replace(
                         "</head>",
-                        `    <meta name="twitter:card" content="summary_large_image" />
+                        `    <!-- Twitter Card Meta Tags -->
+                            <meta property="og:url" content="https://raozhaizhu.github.io/rzz/Quote" />
+                            <meta property="og:type" content="website" />
+                            <meta property="og:title" content="Random Quote Generator" />
+                            <meta property="og:description" content="Get your daily inspiration with random quotes" />
+                            <meta property="og:image" content="https://raozhaizhu.github.io/rzz/x-cover.jpg" />
+                            <meta name="twitter:card" content="summary_large_image" />
+                            <meta name="twitter:domain" content="raozhaizhu.github.io" />
+                            <meta name="twitter:url" content="https://raozhaizhu.github.io/rzz/Quote" />
                             <meta name="twitter:title" content="Random Quote Generator" />
                             <meta name="twitter:description" content="Get your daily inspiration with random quotes" />
                             <meta name="twitter:image" content="https://raozhaizhu.github.io/rzz/x-cover.jpg" />
