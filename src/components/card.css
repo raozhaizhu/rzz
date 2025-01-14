@@ -2,15 +2,7 @@
 .homeWrapper {
     height: auto;
     min-height: 100vh;
-    background: linear-gradient(
-        -45deg,
-        #000000,
-        #2b2b2b,
-        #4a2e2a,
-        #8f3c29,
-        #9a5d42,
-        #1a1a1a
-    );
+    background: linear-gradient(-45deg, #000000, #2b2b2b, #4a2e2a, #8f3c29, #9a5d42, #1a1a1a);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
 }
@@ -49,10 +41,11 @@
     border-left: 2px solid #aa897c;
 }
 
-@media (max-width: 899px) {
+@media (max-width: 768px) {
     .portfolio-grid {
+        width: 100%;
+        padding: 1rem;
         grid-template-columns: 1fr;
         gap: 2rem;
-        padding: 1rem;
     }
 }

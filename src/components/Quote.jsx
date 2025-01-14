@@ -2,7 +2,7 @@ import { React, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import quotes from "../data/quotes.json";
 import colors from "../data/colors.json";
-
+import "./Quote.css";
 const Quote = () => {
     // 设置随机索引的状态
     const [quoteIndex, setQuoteIndex] = useState(Math.floor(Math.random() * quotes.length));

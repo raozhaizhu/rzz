@@ -1,11 +1,6 @@
 .markdownWrapper {
     background: #0f2027; /* fallback for old browsers */
-    background: -webkit-linear-gradient(
-        to right,
-        #2c5364,
-        #203a43,
-        #0f2027
-    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, #2c5364, #203a43, #0f2027); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(
         to right,
         #2c5364,
@@ -200,5 +195,14 @@
     ul:hover,
     ol:hover {
         background-color: #f9f9f9; /* 鼠标悬停时，改变背景色 */
+    }
+}
+
+@media (max-width: 1399px) {
+    .markdownWrapper {
+        padding: 1rem;
+    }
+    .editorWrapper {
+        width: 100%;
     }
 }
