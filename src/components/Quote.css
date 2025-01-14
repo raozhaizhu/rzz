@@ -12,7 +12,16 @@
     padding: 1rem;
   }
   #quote-box {
-    width: 100%;
+    width: 95%;
     padding: 2rem;
+  }
+}
+@media (max-width: 375px) {
+  .quoteWrapper {
+    padding: 1rem;
+  }
+  #quote-box {
+    width: 95%;
+    padding: 1rem;
   }
 }/*# sourceMappingURL=Quote.css.map */
