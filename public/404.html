@@ -3,21 +3,13 @@
     <head>
         <meta charset="utf-8" />
         <title>Redirecting...</title>
-        <script type="text/javascript">
-            // 单页应用的重定向脚本
-            var segmentCount = 1; // GitHub Pages 仓库使用 1，自定义域名使用 0
-            var location = window.location;
-            var l =
-                location.pathname
-                    .split("/")
-                    .slice(0, 1 + segmentCount)
-                    .join("/") + "/";
-            l = l + "?p=/" + location.pathname.slice(1).split("/").slice(segmentCount).join("/");
-            if (location.search) {
-                l += "&q=" + location.search.slice(1);
-            }
-            l += location.hash;
-            window.location.replace(l);
+        <script>
+            // 获取当前路径
+            var pathSegments = window.location.pathname.split("/");
+            var repo = pathSegments[1]; // 'rzz'
+
+            // 直接重定向到目标页面
+            window.location.replace("/" + repo + "/Quote");
         </script>
     </head>
     <body></body>
