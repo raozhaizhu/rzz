@@ -20,15 +20,15 @@
 
         <title>Random Quote Generator</title>
         <script>
-            // 等待短暂时间后重定向，让爬虫有时间读取 meta 标签
+            // 直接重定向到 Quote 页面
             setTimeout(() => {
-                window.location.href = "/rzz/Quote";
+                window.location.replace("https://raozhaizhu.github.io/rzz/Quote");
             }, 100);
         </script>
     </head>
     <body>
         <noscript>
-            <meta http-equiv="refresh" content="0;url=/rzz/Quote" />
+            <meta http-equiv="refresh" content="0;url=https://raozhaizhu.github.io/rzz/Quote" />
         </noscript>
     </body>
 </html>

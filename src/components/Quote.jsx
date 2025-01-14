@@ -22,8 +22,8 @@ const Quote = () => {
     // 生成分享链接
     const tweetQuote = () => {
         const text = encodeURIComponent(`"${randomQuote.text}" - ${randomQuote.author}`);
-        const url = encodeURIComponent("https://raozhaizhu.github.io/rzz/quote.html");
-        const hashtags = "quotes,inspiration"; // 可选：添加相关标签
+        const url = encodeURIComponent("https://raozhaizhu.github.io/rzz/Quote");
+        const hashtags = "quotes,inspiration";
         return `https://twitter.com/intent/tweet?text=${text}&url=${url}&hashtags=${hashtags}`;
     };
 

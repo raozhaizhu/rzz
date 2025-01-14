@@ -14,8 +14,8 @@ function App() {
             <Router basename={basename}>
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="Markdown" element={<Markdown />} />
-                    <Route path="Quote" element={<Quote />} />
+                    <Route path="/Quote" element={<Quote />} />
+                    <Route path="/Markdown" element={<Markdown />} />
                 </Routes>
             </Router>
         </HelmetProvider>
