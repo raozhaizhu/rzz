@@ -1,9 +1,19 @@
 @media (max-width: 1399px) {
     .quoteWrapper {
+        padding: 3rem;
+    }
+    #quote-box {
+        width: 60%;
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .quoteWrapper {
         padding: 1rem;
     }
     #quote-box {
         width: 100%;
-        padding: 1rem;
+        padding: 2rem;
     }
 }
