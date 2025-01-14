@@ -11,8 +11,8 @@ function handleRedirect() {
     const path = params.get("p");
 
     if (path) {
-        // 重写 URL 并导航到正确的路由
-        window.history.replaceState(null, "", path);
+        // 确保修改后的路径包含 /rzz
+        window.history.replaceState(null, "", `/rzz${path}`);
     }
 }
 
