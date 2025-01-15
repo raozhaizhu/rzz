@@ -1,0 +1,13 @@
+.drumBtn {
+  padding: 1rem;
+  border: 1px solid #ccc;
+}
+
+.control {
+  width: 10rem;
+  height: 10rem;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}/*# sourceMappingURL=Drum.css.map */

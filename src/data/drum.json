@@ -1,0 +1,118 @@
+[
+    {
+        "heat": [
+            {
+                "key": "q",
+                "name": "Heater 1",
+                "duration": 1000,
+                "audio": "./audio/heat/Heater-1.mp3"
+            },
+            {
+                "key": "w",
+                "name": "Heater 2",
+                "duration": 1000,
+                "audio": "./audio/heat/Heater-2.mp3"
+            },
+            {
+                "key": "e",
+                "name": "Heater 3",
+                "duration": 1000,
+                "audio": "./audio/heat/Heater-3.mp3"
+            },
+            {
+                "key": "a",
+                "name": "Heater 4",
+                "duration": 1000,
+                "audio": "./audio/heat/Heater-4_1.mp3"
+            },
+            {
+                "key": "s",
+                "name": "Clap",
+                "duration": 1000,
+                "audio": "./audio/heat/Heater-6.mp3"
+            },
+            {
+                "key": "d",
+                "name": "Open HH",
+                "duration": 1000,
+                "audio": "./audio/heat/Dsc_Oh.mp3"
+            },
+            {
+                "key": "z",
+                "name": "Kick n' Hat",
+                "duration": 1000,
+                "audio": "./audio/heat/Kick_n_Hat.mp3"
+            },
+            {
+                "key": "x",
+                "name": "Kick",
+                "duration": 1000,
+                "audio": "./audio/heat/RP4_KICK_1.mp3"
+            },
+            {
+                "key": "c",
+                "name": "Closed HH",
+                "duration": 1000,
+                "audio": "./audio/heat/Cev_H2.mp3"
+            }
+        ]
+    },
+    {
+        "piano": [
+            {
+                "key": "q",
+                "name": "Chord 1",
+                "duration": 1000,
+                "audio": "./audio/piano/Chord_1.mp3"
+            },
+            {
+                "key": "w",
+                "name": "Chord 2",
+                "duration": 1000,
+                "audio": "./audio/piano/Chord_2.mp3"
+            },
+            {
+                "key": "e",
+                "name": "Chord 3",
+                "duration": 1000,
+                "audio": "./audio/piano/Chord_3.mp3"
+            },
+            {
+                "key": "a",
+                "name": "Shaker",
+                "duration": 1000,
+                "audio": "./audio/piano/Give_us_a_light.mp3"
+            },
+            {
+                "key": "s",
+                "name": "Open HH",
+                "duration": 1000,
+                "audio": "./audio/piano/Dry_Ohh.mp3"
+            },
+            {
+                "key": "d",
+                "name": "Closed HH",
+                "duration": 1000,
+                "audio": "./audio/piano/Bld_H1.mp3"
+            },
+            {
+                "key": "z",
+                "name": "Punch Kick",
+                "duration": 1000,
+                "audio": "./audio/piano/punchy_kick_1.mp3"
+            },
+            {
+                "key": "x",
+                "name": "Side Stick",
+                "duration": 1000,
+                "audio": "./audio/piano/side_stick_1.mp3"
+            },
+            {
+                "key": "c",
+                "name": "Snare",
+                "duration": 1000,
+                "audio": "./audio/piano/Brk_Snr.mp3"
+            }
+        ]
+    }
+]

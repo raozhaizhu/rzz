@@ -23,7 +23,12 @@ const portfolioItems = [
             btn1: { text: "EXPLORE NOW", link: "/Markdown" },
         },
     },
-    { title: "Project 3", description: "Description for project 3" },
+    {
+        title: "Drum Machine",
+        description: "Description for Drum Machine",
+        image: "./drumMachine.png",
+        btns: { btn1: { text: "EXPLORE NOW", link: "/Drum" } },
+    },
     { title: "Project 4", description: "Description for project 4" },
     { title: "Project 5", description: "Description for project 5" },
     { title: "Project 6", description: "Description for project 6" },

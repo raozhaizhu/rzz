@@ -1,0 +1,11 @@
+// src/custom-bootstrap.scss
+
+// 引入 Bootstrap 的核心样式
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+
+// 设置前缀
+$prefix: bs-;
+
+// 引入 Bootstrap 的其他组件样式
+@import "bootstrap/scss/bootstrap";

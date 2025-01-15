@@ -5,6 +5,8 @@
 
 /* 其他 CSS 导入放在 Tailwind 指令后面 */
 @import "prismjs/themes/prism.css";
+/* 自定义 Bootstrap 样式 */
+@import "./custom-bootstrap.scss";
 
 *,
 *::before,
@@ -123,3 +125,15 @@ textarea:focus {
     outline: none; /* 去除聚焦时的外轮廓 */
     box-shadow: none; /* 去除聚焦时的阴影 */
 } /*# sourceMappingURL=index.css.map */
+
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    color: inherit;
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
+}
