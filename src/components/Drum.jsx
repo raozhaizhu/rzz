@@ -105,7 +105,7 @@ const Drum = () => {
     return (
         <div
             id="drumPageWrapper"
-            className="bg-[url('./live-concert.jpg')] bg-cover bg-center bg-no-repeat
+            className="bg-[url('https://i.imgur.com/Jt9pGkF.jpeg')] bg-cover bg-center bg-no-repeat
              text-[#000] min-h-screen p-[1rem] flex justify-center items-center">
             <div className="drumContainer p-[2.5rem] w-[40rem] h-[40rem] bg-[url('./wood-frame.jpg')] bg-cover bg-no-repeat bg-[top-left, top-right, bottom-left, bottom-right]">
                 {/* 内板 */}
