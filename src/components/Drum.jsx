@@ -3,6 +3,7 @@
 import { React, useState, useEffect } from "react";
 import drum from "../data/drum";
 import "./Drum.css";
+import woodFrame from "./wood-frame.jpg";
 
 const Drum = () => {
     const heatSounds = drum.find((item) => item.heat)?.heat;
@@ -107,11 +108,11 @@ const Drum = () => {
             id="drumPageWrapper"
             className="bg-[url('https://i.imgur.com/Jt9pGkF.jpeg')] bg-cover bg-center bg-no-repeat
              text-[#000] min-h-screen p-[1rem] flex justify-center items-center">
-            <div className="drumContainer p-[2.5rem] w-[40rem] h-[40rem] bg-[url('./wood-frame.jpg')] bg-cover bg-no-repeat bg-[top-left, top-right, bottom-left, bottom-right]">
+            <div className="drumContainer p-[2.5rem] w-[40rem] h-[40rem] bg-[url('https://raw.githubusercontent.com/raozhaizhu/rzz/gh-pages/wood-frame.jpg')] bg-cover bg-no-repeat bg-[top_left, top_right, bottom_left, bottom_right]">
                 {/* 内板 */}
                 <div
                     className="drumContainerInner relative z-0 bg-[#fff] w-full h-full px-[2rem] py-[1rem]
-                                       bg-[url('./silver-texture.jpg')]  bg-cover bg-center bg-no-repeat
+                                       bg-[url('/silver-texture.jpg')]  bg-cover bg-center bg-no-repeat
                                        ">
                     <div className="absolute z-10 inset-0 bg-black opacity-50  filter brightness-50"></div>
 
