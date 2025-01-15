@@ -25,13 +25,15 @@ function Card({ title, description, index, image, btns }) {
         <div
             id={`card-${index}`}
             ref={cardRef}
-            className="card flex flex-col gap-[3rem]">
+            className="card flex flex-col gap-[3rem] group">
             <div className="w-full">
-                <img
-                    src={image}
-                    alt={title}
-                    className="w-full rounded-[2rem]"
-                />
+                <div className="max-w-full">
+                    <img
+                        src={image}
+                        alt={title}
+                        className="w-full rounded-[2rem]  filter grayscale group-hover:grayscale-0 transition duration-300"
+                    />
+                </div>
             </div>
             <h3 className="font-[Roboto] text-[2rem] font-medium flex justify-between items-center">
                 {title}
