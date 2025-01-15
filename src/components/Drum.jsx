@@ -107,7 +107,7 @@ const Drum = () => {
             id="drumPageWrapper"
             className="bg-[url('./live-concert.jpg')] bg-cover bg-center bg-no-repeat
              text-[#000] min-h-screen p-[1rem] flex justify-center items-center">
-            <div className="drumContainer p-[2.5rem] w-[40rem] h-[40rem] bg-[url('./wood-frame.png')] bg-cover bg-no-repeat bg-[top-left, top-right, bottom-left, bottom-right]">
+            <div className="drumContainer p-[2.5rem] w-[40rem] h-[40rem] bg-[url('./wood-frame.jpg')] bg-cover bg-no-repeat bg-[top-left, top-right, bottom-left, bottom-right]">
                 {/* 内板 */}
                 <div
                     className="drumContainerInner relative z-0 bg-[#fff] w-full h-full px-[2rem] py-[1rem]
@@ -115,7 +115,7 @@ const Drum = () => {
                                        ">
                     <div className="absolute z-10 inset-0 bg-black opacity-50  filter brightness-50"></div>
 
-                    <div className="wholePad relative w-full h-full z-20 flex flex-col gap-[1rem]">
+                    <div className="wholePad relative w-full h-full z-20 flex flex-col justify-evenly gap-[1rem]">
                         {/* 控制面板 */}
                         <div
                             id="controlPad"
@@ -196,7 +196,7 @@ const Drum = () => {
                                     className="drum-pad">
                                     <button
                                         disabled={!power}
-                                        className={`w-[5rem] h-[5rem] drumBtn bg-[#fff] bg-cover bg-center bg-no-repeat rounded-full 
+                                        className={`w-[5rem] h-[5rem] drumBtn bg-[#fff]  rounded-full 
         shadow-[2px_4px_0px_black,-2px_4px_0px_black] transform transition-all ease duration-150
         ${
             power
