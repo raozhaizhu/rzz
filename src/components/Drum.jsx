@@ -1,4 +1,4 @@
-// /Components/Drum.jsx
+// /components/Drum.jsx
 
 import { React, useState, useEffect } from "react";
 import drum from "../data/drum";
