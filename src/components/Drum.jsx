@@ -3,7 +3,6 @@
 import { React, useState, useEffect } from "react";
 import drum from "../data/drum";
 import "./Drum.css";
-import woodFrame from "./wood-frame.jpg";
 
 const Drum = () => {
     const heatSounds = drum.find((item) => item.heat)?.heat;

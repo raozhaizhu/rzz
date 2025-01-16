@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    /* 基础按钮样式 */
+    /* 基础按钮样式 */
+
+    .btn {
+        @apply inline-block text-center transition-all ease-in-out duration-300 cursor-pointer;
+        @apply px-[1rem] py-[0.5rem];
+    }
+    /* 按钮在 hover 状态下使用 filter 改变颜色 */
+    .btn:hover {
+        filter: brightness(1.5) saturate(1.5); /* 增加亮度并增强饱和度 */
+    }
+    /* 中型按钮 */
+    .btn-md {
+        @apply px-[2rem] py-[1rem]; /* 中型按钮的 padding */
+    }
+
+    /* 大型按钮 */
+    .btn-lg {
+        @apply px-[3rem] py-[1.5rem]; /* 大型按钮的 padding */
+    }
+
+    /* 超大按钮 */
+    .btn-xl {
+        @apply px-[4rem] py-[2rem]; /* 超大按钮的 padding */
+    }
+
+    /* Primary 按钮 */
+    .btn-primary {
+        @apply bg-blue-500 text-white;
+    }
+
+    /* Secondary 按钮 */
+    .btn-secondary {
+        @apply bg-gray-500 text-white;
+    }
+
+    /* Success 按钮 */
+    .btn-success {
+        @apply bg-green-500 text-white;
+    }
+
+    /* Danger 按钮 */
+    .btn-danger {
+        @apply bg-red-500 text-white;
+    }
+
+    /* Warning 按钮 */
+    .btn-warning {
+        @apply bg-yellow-500 text-white;
+    }
+
+    /* 轻微缩放按钮按下效果 */
+    .btn-press {
+        position: relative;
+        overflow: hidden;
+        transform: scale(1);
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .btn-press:active {
+        transform: scale(0.95); /* 按下时按钮缩小 */
+    }
+}

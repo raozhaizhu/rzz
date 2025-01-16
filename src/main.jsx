@@ -1,8 +1,14 @@
+// src/main.jsx
 import React from "react";
 import { createRoot } from "react-dom/client";
 import "core-js/stable";
 import "regenerator-runtime/runtime";
-import "./index.css";
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
+import "./index.scss"; // 引入 Tailwind 的 CSS 文件
+
 import App from "./App.jsx";
 
 // 解析查询参数 p 并导航到对应的路由

@@ -1,139 +1,158 @@
 @charset "UTF-8";
+/* 导入 Tailwind 样式 */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* 其他 CSS 导入放在 Tailwind 指令后面 */
-@import "prismjs/themes/prism.css";
-/* 自定义 Bootstrap 样式 */
-@import "./custom-bootstrap.scss";
-
+@layer components {
+  /* 基础按钮样式 */
+  /* 基础按钮样式 */
+  .btn {
+    @apply inline-block rounded-md font-medium text-center transition-all ease-in-out duration-300;
+    @apply px-[1rem] py-[0.5rem];
+  }
+  /* 中型按钮 */
+  .btn-md {
+    @apply px-[2rem] py-[1rem]; /* 中型按钮的 padding */
+  }
+  /* 大型按钮 */
+  .btn-lg {
+    @apply px-[3rem] py-[1.5rem]; /* 大型按钮的 padding */
+  }
+  /* 超大按钮 */
+  .btn-xl {
+    @apply px-[4rem] py-[2rem]; /* 超大按钮的 padding */
+  }
+  /* Primary 按钮 */
+  .btn-primary {
+    @apply bg-blue-500 text-white hover:bg-blue-600;
+  }
+  /* Secondary 按钮 */
+  .btn-secondary {
+    @apply bg-gray-500 text-white hover:bg-gray-600;
+  }
+  /* Success 按钮 */
+  .btn-success {
+    @apply bg-green-500 text-white hover:bg-green-600;
+  }
+  /* Danger 按钮 */
+  .btn-danger {
+    @apply bg-red-500 text-white hover:bg-red-600;
+  }
+  /* Warning 按钮 */
+  .btn-warning {
+    @apply bg-yellow-500 text-white hover:bg-yellow-600;
+  }
+  /* 轻微缩放按钮按下效果 */
+  .btn-press {
+    position: relative;
+    overflow: hidden;
+    transform: scale(1);
+    transition: transform 0.2s ease-in-out;
+  }
+  .btn-press:active {
+    transform: scale(0.95); /* 按下时按钮缩小 */
+  }
+}
+/* Tailwind 的核心指令 */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* 清除默认样式 */
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
-    font-size: max(14px, 1vw);
+  font-size: max(14px, 1vw);
 }
 
 body {
-    font-family: "Inter", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 body {
-    background-color: #f9f9f9; /* 默认 Light Mode 背景 */
-    color: #333; /* 默认文字颜色 */
-}
-
-body.dark {
-    background-color: #202c37;
-    color: #ffffff;
-}
-
-body.dark header {
-    background-color: #2b3743;
-    color: #ffffff;
-}
-
-body.dark .serachBar {
-    background-color: #2b3743;
-    color: #ffffff;
-}
-
-body.dark select {
-    background-color: #2b3743;
-    color: #ffffff;
-}
-
-body.dark .countryCard {
-    background-color: #2b3743;
-    color: #ffffff;
-}
-
-body.dark .borderCountry {
-    background-color: #2b3743;
-    color: #ffffff;
+  background-color: #fff; /* 默认 Light Mode 背景 */
+  color: #000; /* 默认文字颜色 */
 }
 
 p {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 
 input {
-    all: unset; /* 去除所有默认样式 */
-    border: none; /* 如果你希望去除边框 */
-    background: #000; /* 如果你希望背景透明 */
-    outline: none; /* 去除聚焦时的轮廓 */
+  all: unset; /* 去除所有默认样式 */
+  border: none; /* 如果你希望去除边框 */
+  background: #000; /* 如果你希望背景透明 */
+  outline: none; /* 去除聚焦时的轮廓 */
 }
 
 /* 去除 Chrome、Safari 和新版 Edge 中的增减按钮 */
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-    text-align: left;
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  text-align: left;
 }
 
 /* 去除 Firefox 中的增减按钮 */
-input[type="number"] {
-    -moz-appearance: textfield;
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
-input[type="radio"]::after {
-    content: "";
-    display: inline-block;
-    width: 1rem;
-    height: 1rem;
-    border: 1px solid #818d94;
-    border-radius: 50%;
-    margin-right: 1rem;
+input[type=radio]::after {
+  content: "";
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid #818d94;
+  border-radius: 50%;
+  margin-right: 1rem;
 }
 
-input[type="radio"]:checked::after {
-    background-color: #dbde36;
-    box-shadow: inset 0 0 0 2px #fff;
+input[type=radio]:checked::after {
+  background-color: #dbde36;
+  box-shadow: inset 0 0 0 2px #fff;
 }
 
 select {
-    all: unset; /* 重置所有样式 */
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none; /* 去除默认样式和原生样式 */
-    border: none; /* 去除边框 */
-    background: transparent; /* 去除背景 */
-    padding: 0; /* 去除内边距 */
-    font-size: 1rem; /* 设置字体大小 */
+  all: unset; /* 重置所有样式 */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; /* 去除默认样式和原生样式 */
+  border: none; /* 去除边框 */
+  background: transparent; /* 去除背景 */
+  padding: 0; /* 去除内边距 */
+  font-size: 1rem; /* 设置字体大小 */
 }
 
 /* 完全去除 textarea 默认样式 */
 textarea {
-    all: unset; /* 取消所有默认样式 */
-    padding: 0rem; /* 内边距 */
-    width: 100%; /* 让 textarea 宽度占满父容器 */
-    font-family: inherit; /* 继承父元素字体 */
-    font-size: inherit; /* 继承父元素字体大小 */
-    line-height: inherit; /* 继承父元素行高 */
-    box-sizing: border-box; /* 包括内边距在内的盒模型 */
+  all: unset; /* 取消所有默认样式 */
+  padding: 0rem; /* 内边距 */
+  width: 100%; /* 让 textarea 宽度占满父容器 */
+  font-family: inherit; /* 继承父元素字体 */
+  font-size: inherit; /* 继承父元素字体大小 */
+  line-height: inherit; /* 继承父元素行高 */
+  box-sizing: border-box; /* 包括内边距在内的盒模型 */
 }
 
 /* 去除 textarea 获得焦点时的样式 */
 textarea:focus {
-    outline: none; /* 去除聚焦时的外轮廓 */
-    box-shadow: none; /* 去除聚焦时的阴影 */
-} /*# sourceMappingURL=index.css.map */
-
+  outline: none; /* 去除聚焦时的外轮廓 */
+  box-shadow: none; /* 去除聚焦时的阴影 */
+} 
 button {
-    background: none;
-    border: none;
-    padding: 0;
-    margin: 0;
-    font: inherit;
-    color: inherit;
-    outline: none;
-    box-shadow: none;
-    cursor: pointer;
-}
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  outline: none;
+  box-shadow: none;
+  cursor: pointer;
+}/*# sourceMappingURL=index.css.map */
