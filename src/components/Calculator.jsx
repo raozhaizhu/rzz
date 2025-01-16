@@ -1,137 +1,129 @@
-import { React, useState } from "react";
-import "./Calculator.css";
+import { React, useState } from 'react';
+import './Calculator.css';
 
 const Calculator = () => {
-    const [numberSequence, setNumberSequence] = useState([]); // 数字数列
-    const [operatorSequence, setOperatorSequence] = useState([]); // 运算符数列
-    const [expression, setExpression] = useState("0"); // 表达式
-    const [output, setOutput] = useState("0"); // 计算结果
+    // define state variables
+    const [input, setInput] = useState('0');
+    const [result, setResult] = useState('0');
+    // define functions
+    // 处理清空按钮
+    const handleClear = () => {
+        setInput('0');
+        setResult('0');
+    };
+    // 处理数值和符号输入
+    const handleInput = (value) => {
+        setInput((prevInput) => {
+            // 分4种情况来处理 value 的类型
 
-    // 按钮列表
-    const buttons = [
-        { name: "7", id: "seven" },
-        { name: "8", id: "eight" },
-        { name: "9", id: "nine" },
-        { name: "/", id: "divide" },
-        { name: "4", id: "four" },
-        { name: "5", id: "five" },
-        { name: "6", id: "six" },
-        { name: "*", id: "multiply" },
-        { name: "1", id: "one" },
-        { name: "2", id: "two" },
-        { name: "3", id: "three" },
-        { name: "-", id: "subtract" },
-        { name: "0", id: "zero" },
-        { name: ".", id: "decimal" },
-        { name: "=", id: "equals" },
-        { name: "+", id: "add" },
-        { name: "C", id: "clear" },
-        { name: "←", id: "backspace" },
+            //1.如果输入的是0
+            if (value === '0' && prevInput === '0') {
+                // 如果输入的是0，且当前输入框中已经有0，则不做任何操作
+                return prevInput;
+            }
+
+            // 2.如果输入的是1-9的数字
+            if (/[1-9]/.test(value)) {
+                if (prevInput === '0') {
+                    // 如果开头是0，去掉0并输入新的数字
+                    return value;
+                }
+                return prevInput + value; // 否则，直接追加数字
+            }
+            // 3.如果输入的是运算符 (+, -, *, /)
+            if (/[+\-*/]/.test(value)) {
+                if (prevInput === '0') {
+                    // 如果当前输入是0，允许输入运算符
+                    return prevInput + value;
+                }
+                return prevInput + value; // 否则，直接追加运算符
+            }
+
+            // 4.如果输入的是小数点
+            if (value === '.') {
+                // 检查当前输入是否包含小数点以及是否存在不合法的小数点组合（如 9.9.9 或 0.9.）
+                const regex = /\.\d*\.\d*|\.\d*\./;
+                if (regex.test(prevInput + value)) {
+                    // 如果有非法小数点组合，则保持之前的输入
+                    return prevInput;
+                }
+                return prevInput + value; // 否则，允许输入小数点
+            }
+
+            return prevInput + value; // 默认处理：其他情况直接追加字符
+        });
+    };
+
+    // 处理计算按钮
+    const handleCalculate = () => {
+        // 匹配连续的运算符
+        const regex = /[+\-*/]{2,}/g;
+
+        const sanitizedInput = input.replace(regex, (match) => {
+            // 检查负号是否位于末尾
+            if (match[match.length - 1] === '-') {
+                // 如果正号或者负号在末尾，则取最后2个运算符
+                return match[match.length - 2] + match[match.length - 1];
+            }
+
+            // 对于其他合法的连续符号，保留最后一个符号
+            return match[match.length - 1];
+        });
+
+        try {
+            // 使用 eval 计算结果
+            const newResult = eval(sanitizedInput);
+            setInput(newResult.toString());
+            setResult(newResult.toString());
+        } catch (error) {
+            // 如果计算失败，显示错误信息
+            setInput('Error');
+            setResult('Error');
+        }
+    };
+
+    // 定义按钮
+    const btn = [
+        { value: '1', id: 'one', function: handleInput },
+        { value: '2', id: 'two', function: handleInput },
+        { value: '3', id: 'three', function: handleInput },
+        { value: '4', id: 'four', function: handleInput },
+        { value: '5', id: 'five', function: handleInput },
+        { value: '6', id: 'six', function: handleInput },
+        { value: '7', id: 'seven', function: handleInput },
+        { value: '8', id: 'eight', function: handleInput },
+        { value: '9', id: 'nine', function: handleInput },
+        { value: '0', id: 'zero', function: handleInput },
+        { value: '.', id: 'decimal', function: handleInput },
+        { value: '+', id: 'add', function: handleInput },
+        { value: '-', id: 'subtract', function: handleInput },
+        { value: '*', id: 'multiply', function: handleInput },
+        { value: '/', id: 'divide', function: handleInput },
+        { value: '=', id: 'equals', function: handleCalculate },
+        { value: 'C', id: 'clear', function: handleClear },
     ];
-
-    // 更新表达式
-    const updateExpression = (numbers, operators) => {
-        let expr = "";
-        for (let i = 0; i < numbers.length; i++) {
-            expr += numbers[i];
-            if (i < operators.length) expr += operators[i];
-        }
-        return expr;
-    };
-
-    const handleButtonClick = (btn) => {
-        const value = btn.name;
-
-        switch (value) {
-            case "C":
-                // 清空所有状态
-                setNumberSequence([]);
-                setOperatorSequence([]);
-                setExpression("0");
-                setOutput("0");
-                break;
-
-            case "←":
-                // 删除最后一项（数字或运算符）
-                if (operatorSequence.length >= numberSequence.length) {
-                    // 删除最后一个运算符
-                    setOperatorSequence((prev) => prev.slice(0, -1));
-                } else {
-                    // 删除最后一个数字
-                    setNumberSequence((prev) => prev.slice(0, -1));
-                }
-                break;
-
-            case "=":
-                // 计算表达式
-                try {
-                    const validExpression = updateExpression(
-                        numberSequence,
-                        operatorSequence
-                    );
-                    const result = new Function(`return ${validExpression}`)();
-                    setOutput(result.toString());
-                } catch (e) {
-                    setOutput("Error");
-                }
-                break;
-
-            default:
-                if (["+", "-", "*", "/"].includes(value)) {
-                    // 运算符输入
-                    setOperatorSequence((prev) => {
-                        if (prev.length >= numberSequence.length) {
-                            // 替换最后一个运算符
-                            return [...prev.slice(0, -1), value];
-                        }
-                        return [...prev, value];
-                    });
-                } else {
-                    // 数字输入
-                    setNumberSequence((prev) => {
-                        if (operatorSequence.length === prev.length) {
-                            // 开始新的数字
-                            return [...prev, value];
-                        }
-                        // 继续拼接当前数字
-                        const newNumbers = [...prev];
-                        newNumbers[newNumbers.length - 1] += value;
-                        return newNumbers;
-                    });
-                }
-                break;
-        }
-
-        // 每次更新后，重新生成表达式
-        setExpression(updateExpression(numberSequence, operatorSequence));
-    };
-
+    // 渲染开始
     return (
-        <div className="calculator p-4 bg-gray-800 text-white">
-            {/* 显示屏 */}
-            <div id="display" className="display bg-gray-900 p-4 mb-4 rounded">
-                <div className="expression text-right text-xl">
-                    {expression || "0"} {/* 显示当前表达式 */}
-                </div>
-                <div className="output text-right text-2xl font-bold">
-                    {output} {/* 显示计算结果 */}
-                </div>
+        <div className='bg-[#000] text-[fff] p-[1rem]'>
+            <div id='display' className='text-white text-center text-[2rem]'>
+                {input}
             </div>
-
-            {/* 按钮区 */}
-            <div className="button-pad grid grid-cols-4 gap-2">
-                {buttons.map((btn) => (
-                    <button
-                        id={btn.id}
-                        key={btn.id}
-                        className="btn bg-gray-700 hover:bg-gray-600 p-4 rounded"
-                        onClick={() => handleButtonClick(btn)}>
-                        {btn.name}
-                    </button>
-                ))}
+            <div id='display' className='text-white text-center text-[2rem]'>
+                {result}
             </div>
+            {btn.map((button) => (
+                <button
+                    className='btn btn-primary btn-lg'
+                    key={button.id}
+                    id={button.id}
+                    onClick={() => button.function(button.value)} // 传递按钮的 value 给对应的函数
+                >
+                    {button.value}
+                </button>
+            ))}
         </div>
     );
 };
 
 export default Calculator;
+
