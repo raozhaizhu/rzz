@@ -7,6 +7,7 @@ import Quote from './components/Quote';
 import Markdown from './components/Markdown';
 import Drum from './components/Drum';
 import Calculator from './components/Calculator';
+import Clock from './components/Clock';
 
 function App() {
     // 动态设置 basename
@@ -16,8 +17,9 @@ function App() {
         <HelmetProvider>
             <Router basename={basename}>
                 <Routes>
+                    <Route path='/' element={<Clock />} />
                     <Route path='/Home' element={<Home />} />
-                    <Route path='/' element={<Calculator />} />
+                    <Route path='/Calculator' element={<Calculator />} />
                     <Route path='/Quote' element={<Quote />} />
                     <Route path='/Markdown' element={<Markdown />} />
                     <Route path='/Drum' element={<Drum />} />
