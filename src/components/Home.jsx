@@ -1,43 +1,48 @@
-import React from "react";
-import Card from "./Card";
-import "./card.css";
+import React from 'react';
+import Card from './Card';
+import './card.css';
 
 const portfolioItems = [
     {
-        title: "Quote App",
+        title: 'Quote App',
         description:
             "Click 'New Quote' for a random quote, then share it on X and Instagram. Built with React for smooth vibes... because who doesn’t need random wisdom in their life? 😜",
 
-        image: "./quoteApp.png",
+        image: './quoteApp.png',
         btns: {
-            btn1: { text: "EXPLORE NOW", link: "/Quote" },
+            btn1: { text: 'EXPLORE NOW', link: '/Quote' },
         },
     },
     {
-        title: "Markdown App",
+        title: 'Markdown App',
         description:
-            "Write and preview markdown files with ease. Built a markdown app with React... because copy-pasting from Notepad felt too advanced.😅",
+            'Write and preview markdown files with ease. Built a markdown app with React... because copy-pasting from Notepad felt too advanced.😅',
 
-        image: "./markdownApp.png",
+        image: './markdownApp.png',
         btns: {
-            btn1: { text: "EXPLORE NOW", link: "/Markdown" },
+            btn1: { text: 'EXPLORE NOW', link: '/Markdown' },
         },
     },
     {
-        title: "Drum Machine",
-        description: "Description for Drum Machine",
-        image: "./drumMachine.png",
-        btns: { btn1: { text: "EXPLORE NOW", link: "/Drum" } },
+        title: 'Drum Machine',
+        description: 'Description for Drum Machine',
+        image: './drumMachine.png',
+        btns: { btn1: { text: 'EXPLORE NOW', link: '/Drum' } },
     },
-    { title: "Project 4", description: "Description for project 4" },
-    { title: "Project 5", description: "Description for project 5" },
-    { title: "Project 6", description: "Description for project 6" },
+    {
+        title: 'Clock App',
+        description: 'Description for Clock App',
+        image: './clock.png',
+        btns: { btn1: { text: 'EXPLORE NOW', link: '/Clock' } },
+    },
+    { title: 'Project 5', description: 'Description for project 5' },
+    { title: 'Project 6', description: 'Description for project 6' },
 ];
 
 function Home() {
     return (
-        <div className="homeWrapper">
-            <div className="portfolio-grid">
+        <div className='homeWrapper'>
+            <div className='portfolio-grid'>
                 {portfolioItems.map((item, index) => (
                     <Card
                         key={index}
@@ -54,3 +59,4 @@ function Home() {
 }
 
 export default Home;
+
