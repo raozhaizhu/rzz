@@ -17,8 +17,8 @@ function App() {
         <HelmetProvider>
             <Router basename={basename}>
                 <Routes>
-                    <Route path='/' element={<Clock />} />
-                    <Route path='/Home' element={<Home />} />
+                    <Route path='/' element={<Home />} />
+                    <Route path='/Clock' element={<Clock />} />
                     <Route path='/Calculator' element={<Calculator />} />
                     <Route path='/Quote' element={<Quote />} />
                     <Route path='/Markdown' element={<Markdown />} />
